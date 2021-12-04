@@ -1,0 +1,32 @@
+.grid {
+	display: flex;
+	flex-wrap: wrap;
+	flex-flow: row wrap;
+	flex-grow: 1;
+}
+
+.grid .col {
+	width: 16.6666666667%;
+}
+
+.grid-thirds {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.grid-thirds .col {
+	width: 32%;
+}
+
+@media (max-width: 400px) {
+	.grid,
+	.grid-thirds {
+		display: block;
+	}
+
+	.col {
+		width: 100%;
+		margin: 0 0 10px 0;
+	}
+}
