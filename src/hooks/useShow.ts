@@ -11,8 +11,8 @@ type Show = {
   number: string
 }
 
-type Seasons = {
-  [key: number]: Episode[]
+export type Seasons = {
+  [key: number | string]: Episode[]
 }
 
 type ResponseType = Show & { _embedded: { episodes: Episode[] } }
