@@ -1,0 +1,18 @@
+.c-heading-wrap {
+	background-color: #6c648b;
+	font-weight: bold;
+}
+
+.c-heading-wrap__one {
+	border-bottom: 1px solid #18121e;
+	color: #18121e;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+.c-heading-wrap__three {
+	border-bottom: 1px solid #18121e;
+	color: #18121e;
+	padding: 10px;
+	margin-bottom: 10px;
+}

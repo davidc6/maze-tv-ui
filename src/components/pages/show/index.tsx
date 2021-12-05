@@ -22,7 +22,7 @@ const Show = () => {
     const arr = []
 
     for (const seasonId of Object.keys(episodes)) {
-      arr.push(<Module id={seasonId} episodes={episodes[seasonId]} />)
+      arr.push(<Module key={seasonId} id={seasonId} episodes={episodes[seasonId]} />)
     }
 
     return arr
