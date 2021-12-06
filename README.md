@@ -2,7 +2,7 @@
 
 ## Maze TV UI
 
-- To run locally: `git clone git@github.com:davidc6/maze-tv-ui.git` then `npm install` and `npm run dev` (runs webpack dev server locally and serves unoptimised assets)
+- To run locally: `git clone git@github.com:davidc6/maze-tv-ui.git` then `npm install` and `npm run dev` (runs webpack dev server locally and serves unoptimised assets). The app should become available at [http://localhost:9000/](http://localhost:9000/)
 - To build production version (CSS minified, JS uglified) `npm run build` (please note, opening `index.html` from the `public` directory won't load js bundle properly since the setup it's not designed to work in such way)
 - To run tests `npm t`
 
@@ -36,6 +36,8 @@
 - Add request timeout
 - A local server to serve production assets
 - Add linter and prettier
+- Potentially debounce and memoize episode searches
+- Improve styling/design
 
 ## Comments
 
