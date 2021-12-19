@@ -1,35 +1,39 @@
-import React from 'react'
-import useSearch from '../../../hooks/useSearch';
-import Loader from '../../loader';
+import React, { useState } from 'react'
 import BasePage from '../base';
 import ShowsModule from '../../showsModule';
-import Error from '../error';
 
-const Home = () => {  
-  // TODO - this is hard-coded for now, would be great to add search functionality
-  const query = 'Doctor Who'
-  const { isLoading, isError, data } = useSearch(query)
+const Home = () => {
+  const [keyword, setKeyword] = useState('')
 
-  if (isError) {
-    return <Error />
-  }
+  const debounce = () => {
+    let id: NodeJS.Timeout = null
+    
+    return (e: React.ChangeEvent<HTMLInputElement>) => {
+      clearTimeout(id)
 
-  const render = () => {
-    return (
-      <BasePage>
-        <ShowsModule name={`Search results for: ${query}`} shows={data} />
-      </BasePage>
-    )
+      id = setTimeout(() => {
+        const keyword = e.target.value
+        if (!keyword) return
+ 
+        setKeyword(keyword)
+      }, 2000) 
+    }
   }
 
   return (
-    <div>
-      {
-        isLoading
-        ? <Loader />
-        : render()
-      }
-    </div>
+    <BasePage>
+      <div className="c-search">
+        <input
+          name="search"
+          aria-label="search-input"
+          className="c-search__input"
+          type="search"
+          placeholder='Search for a show'
+          onChange={debounce()}
+        />
+      </div>
+      <ShowsModule keyword={keyword} />
+    </BasePage>
   )
 }
 

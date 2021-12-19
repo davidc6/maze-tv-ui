@@ -40,13 +40,12 @@ const Show = () => {
     const seasonIds = Object.keys(episodes)
 
     for (const seasonId of seasonIds) {
-      
       for (const episode of episodes[seasonId]) {
-        const summary = episode?.summary?.toLowerCase()
+        const summary = episode?.summary ? episode.summary.toLowerCase() : null
 
         if (summary && summary.includes(keyword.toLowerCase())) {    
           const season = seasonEpisodes[seasonId]
-            
+
           if (season) {
             season.push(episode)
             continue
